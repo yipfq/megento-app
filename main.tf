@@ -16,10 +16,24 @@ provider "aws" {
 
 resource "aws_vpc" "megento-tf-vpc" {
   cidr_block = "10.0.0.0/16"
+  tags = {
+    Name: "megento-tf-vpc"
+  }
 }
 
 resource "aws_subnet" "megento-tf-subnet-1" {
     vpc_id = aws_vpc.megento-tf-vpc.id
     cidr_block = "10.0.9.0/24"
     availability_zone = "us-east-1a"
+    tags = {
+      Name: "megento-tf-subnet-1"
+    }
+}
+
+output "magento-tf-vpc-id" {
+  value = aws_vpc.megento-tf-vpc.id
+}
+
+output "magento-tf-subnet-1-id" {
+  value = aws_subnet.megento-tf-subnet-1.id
 }
