@@ -122,5 +122,4 @@ resource "aws_instance" "megento-tf-server" {
   subnet_id = aws_subnet.megento-tf-subnet01.id
   availability_zone = var.avail_zone
   associate_public_ip_address = true
-  user_data = file("entry_script.sh")
 }

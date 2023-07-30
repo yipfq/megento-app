@@ -1,7 +1,11 @@
+
 /.terraform/*
-.terraform.lock.hcl
+
+#tf state file
 terraform.tfstate
 terraform.tfstate.backup
-*.exe
+
+
+#
 terraform.tfvars
 variables.tf
